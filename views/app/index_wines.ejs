@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>WINES INDEX</title>
+    </head>
+    <body>
+        <h1>App for User: Wines Index</h1>
+        <% for (let i = 0; i < wines.length; i++) {%>
+            <h4>Name: <%= wines[i].name%></h4>
+            <p>Type: <%=wines[i].type%></p>
+            <p>Rating: <%=wines[i].rating%></p>
+            <a href="/wines/<%= wines[i]._id%>">View Details</a>
+            <%}%>
+    </body>
+</html>

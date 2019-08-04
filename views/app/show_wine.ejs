@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>SHOW WINE</title>
+    </head>
+    <body>
+        <h1>Show Details: Wine</h1>
+        <p><%= wine %></p>
+        <p><%=  wine._doc  %></p>
+        <p><%=  typeof Object.entries(wine._doc)  %></p>
+
+        <dl class="">
+            <%for (let  [key, value] of Object.entries(wine._doc)) {%>
+                <% if (key !== "_id" && key !== "createdAt" && key !== "updatedAt" && key !== "__v"){ %>
+                <dt> <%= key %></dt>
+                <dd><%= value %></dd>
+                <% } %>
+            <%}%>
+        </dl>
+        <form class="" action="" method="post">
+            <input type="submit" name="" value="Bought/Tried Again">
+        </form>
+        <a href="/wines/<%= wine._id%>/edit">Edit</a>
+    </body>
+</html>
