@@ -6,12 +6,20 @@
     </head>
     <body>
         <h1>App for User: Wines Index</h1>
-        <% for (let i = 0; i < wines.length; i++) {%>
-            <h4>Name: <%= wines[i].name %></h4>
-            <p>Type: <%= wines[i].type %></p>
-            <p>Rating: <%=wines[i].rating%></p>
-            <a href="/wines/<%= wines[i]._id%>">View Details</a>
+        <a href="/wines/new">Add new wine journal entry</a>
+        <% for (let i = 0; i < user.savedWines.length; i++) {%>
+            <h4>Name: <%= user.savedWines[i].name %></h4>
+            <p>Type: <%= user.savedWines[i].type %></p>
+            <p>Rating: <%=user.savedWines[i].rating%></p>
+            <a href="/wines/<%= user.savedWines[i]._id%>"><button type="button" name="button">View Details</button></a>
+            <form class="" action="/wines/<%= user.savedWines[i]._id %>?_method=DELETE" method="POST">
+                <button type="submit">Delete Entry</button>
+            </form>
             <%}%>
+
+        <div class="">
         <a href="/">Back to Homepage</a>
+        </div>
+
     </body>
 </html>
