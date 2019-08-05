@@ -7,10 +7,11 @@
     <body>
         <h1>App for User: Wines Index</h1>
         <% for (let i = 0; i < wines.length; i++) {%>
-            <h4>Name: <%= wines[i].name%></h4>
-            <p>Type: <%=wines[i].type%></p>
+            <h4>Name: <%= wines[i].name %></h4>
+            <p>Type: <%= wines[i].type %></p>
             <p>Rating: <%=wines[i].rating%></p>
             <a href="/wines/<%= wines[i]._id%>">View Details</a>
             <%}%>
+        <a href="/">Back to Homepage</a>
     </body>
 </html>

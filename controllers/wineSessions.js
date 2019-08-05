@@ -12,12 +12,13 @@ router.get('/' , (req, res) => {
              wines: allWines
           });
     });
-
 });
+
     //new
 router.get("/new", (req,res) => {
     res.render("app/new_wine.ejs");
 });
+
     //show
 router.get("/:id", (req,res) => {
     Wines.findById(req.params.id, (err,foundWine) => {
@@ -27,6 +28,7 @@ router.get("/:id", (req,res) => {
         });
     });
 });
+
     //edit
 router.get("/:id/edit", (req,res) => {
     Wines.findById(req.params.id, (err,foundWine) => {
@@ -49,6 +51,7 @@ router.post("/", (req,res) => {
         res.redirect("/wines");
     });
 });
+
 //PUT
 router.put("/:id", (req,res) => {
     if (req.body.buyAgain === "on") {
@@ -61,6 +64,7 @@ router.put("/:id", (req,res) => {
     });
 });
 
+//DELETE
 router.delete("/:id", (req,res) => {
     Wines.findByIdAndRemove(req.params.id, (err, deletedWine) => {
         res.redirect("/wines");

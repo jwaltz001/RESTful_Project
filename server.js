@@ -8,7 +8,7 @@ const express = require('express');
 const app = express ();
 const methodOverride  = require('method-override');
 const mongoose = require ('mongoose');
-
+const session = require("express-session");
 
 //___________________
 //Port
@@ -29,7 +29,7 @@ mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
 
 // Connect to Mongo
-mongoose.connect(MONGODB_URI ,  { useNewUrlParser: true});
+mongoose.connect(MONGODB_URI ,  {useNewUrlParser: true});
 
 // Error / success
 db.on('error', (err) => console.log(err.message + ' is Mongod not running?'));
@@ -50,13 +50,32 @@ app.use(express.json());// returns middleware that only parses JSON - may or may
 //method override
 app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 
+//sessions
+app.use(session({
+    secret:"secret",
+    //secret: process.env.SECRET,
+    resave: false,
+    saveUninitialized: false
+}));
 //___________________
 // Routes
 //___________________
+//HOMEPAGE
+app.get("/", (req,res) => {
+    res.render("home.ejs",
+    {
+        user: req.session.currentUser
+    });
+});
 //Controllers
 const winesController = require("./controllers/wineSessions.js");
 app.use("/wines", winesController);
 
+const userController = require("./controllers/users.js");
+app.use("/users", userController);
+
+const sessionController = require("./controllers/sessions.js");
+app.use("/sessions", sessionController);
 //___________________
 //Listener
 //___________________
