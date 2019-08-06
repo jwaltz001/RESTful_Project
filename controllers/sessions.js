@@ -3,9 +3,18 @@ const express = require("express");
 const router = express.Router();
 const User = require("../models/users.js");
 const bcrypt = require('bcrypt');
-
+//Need this?
 router.get("/new", (req,res) => {
-    res.render("sessions/new_session.ejs");
+    res.render("sessions/new_session.ejs",
+    {
+        tabTitle: "Login"
+    });
+});
+
+router.get('/logout', (req, res) => {
+    req.session.destroy((err)=> {
+        res.redirect('/');
+    });
 });
 
 router.post("/", (req,res) => {
@@ -22,6 +31,9 @@ router.post("/", (req,res) => {
         }
     });
 });
+
+module.exports = router;
+
 // For auth on homepage?
 //     if (req.session.currentUser) {
 //         res.render("/",
@@ -32,11 +44,3 @@ router.post("/", (req,res) => {
 //         res.render("/users/new");
 //     }
 // });
-
-router.delete('/', (req, res) => {
-    req.session.destroy(()=> {
-        res.redirect('/');
-    });
-});
-
-module.exports = router;

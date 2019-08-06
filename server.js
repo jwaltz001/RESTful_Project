@@ -64,7 +64,8 @@ app.use(session({
 app.get("/", (req,res) => {
     res.render("home.ejs",
     {
-        user: req.session.currentUser
+        user: req.session.currentUser,
+        tabTitle: "Home"
     });
 });
 //Controllers

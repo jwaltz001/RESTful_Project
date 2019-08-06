@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head>
-        <meta charset="utf-8">
-        <title>WINES INDEX</title>
+        <% include ./partials/head.ejs %>
     </head>
     <body>
+        <header>
+            <% include ./partials/header.ejs %>
+        </header>
+        <div id="wine-index-background" class="background-img">
+
+        </div>
         <h1>App for User: Wines Index</h1>
         <a href="/wines/new">Add new wine journal entry</a>
         <% for (let i = 0; i < user.savedWines.length; i++) {%>

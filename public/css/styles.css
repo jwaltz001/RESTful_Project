@@ -1,0 +1,13 @@
+.nav-wrapper {
+    padding: 0 2em;
+}
+.background-img {
+    position: absolute;
+    z-index: -1;
+    /* display: flex;
+    align-items: center; */
+    width: 100%;
+}
+.background-img > img {
+    width:100%;
+ }

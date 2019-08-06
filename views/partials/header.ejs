@@ -1,0 +1,36 @@
+<nav>
+    <div class="nav-wrapper">
+        <a href="#" class="brand-logo center">RESTful Drinks</a>
+        <a href="#" data-target="user-account" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <% if (user) { %>
+            <a href="/sessions/logout">Logout</a>
+        <% }else{ %>
+                <li>
+                    <a class="waves-effect waves-light red darken-3 btn modal-trigger" href="#login-modal">Log in</a>
+                </li>
+                <li>
+                    <a class="waves-effect waves-light red darken-3 btn" href="/users/new">Sign Up</a>
+                </li>
+        <% } %>
+        </ul>
+        <div class="col s12">
+            <a href="#!" class="breadcrumb">Home</a>
+            <a href="#!" class="breadcrumb">Second</a>
+            <a href="#!" class="breadcrumb">Third</a>
+        </div>
+     </div>
+</nav>
+<ul class="right sidenav" id="user-account">
+<% if (user) { %>
+    <a class="waves-effect waves-light red darken-3 btn modal-trigger" href="/logout">Logout</a>
+<% }else{ %>
+        <li>
+            <a class="waves-effect waves-light red darken-3 btn modal-trigger" href="#login-modal">Log in</a>
+        </li>
+        <li>
+            <a class="waves-effect waves-light red darken-3 btn" href="/users/new">Sign Up</a>
+        </li>
+
+<% } %>
+</ul>
