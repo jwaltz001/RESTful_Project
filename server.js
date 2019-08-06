@@ -61,11 +61,21 @@ app.use(session({
 // Routes
 //___________________
 //HOMEPAGE
+const navInfo = (id) => {
+    return [
+        {title:"Home", url:"/"},
+        "Wine Journal","/wines",
+        {title:"Entry", url:"/wines/"+id},
+        {title:"Edit", url:"/wines/"+id+"/edit"},
+        {title:"New", url:"/wines/new"}
+    ];
+};
 app.get("/", (req,res) => {
     res.render("home.ejs",
     {
         user: req.session.currentUser,
-        tabTitle: "Home"
+        tabTitle: navInfo(),
+        siteMapPostion: 0
     });
 });
 //Controllers

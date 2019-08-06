@@ -15,9 +15,15 @@
         <% } %>
         </ul>
         <div class="col s12">
-            <a href="#!" class="breadcrumb">Home</a>
-            <a href="#!" class="breadcrumb">Second</a>
-            <a href="#!" class="breadcrumb">Third</a>
+        <% for (let i = 0; i <= siteMapPostion; i++) { %>
+            <% if (i < 3) { %>
+                <a href="<%= tabTitle[i].url %>" class="breadcrumb"><%=tabTitle[i].title %></a>
+                <% } else if (i == 3) { %>
+                    <a href="<%= tabTitle[i].url %>" class="breadcrumb"><%= tabTitle[i].title %></a>
+                <% } else if (i == 4) {%>
+                    <a href="<%= tabTitle[i].url %>" class="breadcrumb"><%= tabTitle[i].title %></a>
+                <% } %>
+            <% } %>
         </div>
      </div>
 </nav>
@@ -31,6 +37,5 @@
         <li>
             <a class="waves-effect waves-light red darken-3 btn" href="/users/new">Sign Up</a>
         </li>
-
 <% } %>
 </ul>

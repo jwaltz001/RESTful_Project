@@ -1,33 +1,33 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head>
-        <meta charset="utf-8">
-        <title>NEW WINE</title>
+        <% include ../partials/head.ejs %>
     </head>
     <body>
-        <h1>New Wine Entry</h1>
-        <form class="" action="/wines" method="POST">
-            <fieldset class="wine-notes">
-                Name: <input type="text" name="name" value=""><br>
-                Type of Wine: <input type="text" name="type" value=""><br>
-                Brand/Vineyard: <input type="text" name="brand" value=""><br>
-                Place of Origin (Country/Region): <input type="text" name="origin" value=""><br>
-                Year: <input type="number" name="year" value=""><br>
-                Price: <input type="text" name="price" value=""><br>
-                Where you bought/tried it: <input type="text" name="boughtAt" value=""><br>
-            </fieldset>
-            <fieldset class="tasting-notes">
-                Number Bought/Tried: <input type="number" name="numberBought" value="" min=0><br>
-                Color: <input type="text" name="color" value=""><br>
-                Flavor: <input type="text" name="flavor" value=""><br>
-                Aroma: <input type="text" name="aroma" value=""><br>
-                Finish: <input type="text" name="finish" value=""><br>
-                Would you buy it again? <input type="checkbox" name="buyAgain"><br>
-                Overall Rating: <input type="number" name="rating" value="" min=0 max=5><br>
-                Comments: <textarea id="tasting-comments" name="comments" placeholder=""></textarea>  <br>
-            </fieldset>
-
-            <input type="submit" value="Add to Journal">
-        </form>
+        <div class="container">
+            <h1>New Wine Entry</h1>
+            <form class="" action="/wines" method="POST">
+                <fieldset class="wine-notes">
+                    Name: <input type="text" name="name" value=""><br>
+                    Type of Wine: <input type="text" name="type" value=""><br>
+                    Brand/Vineyard: <input type="text" name="brand" value=""><br>
+                    Place of Origin (Country/Region): <input type="text" name="origin" value=""><br>
+                    Year: <input type="number" name="year" value=""><br>
+                    Price: <input type="text" name="price" value=""><br>
+                    Where you bought/tried it: <input type="text" name="boughtAt" value=""><br>
+                </fieldset>
+                <fieldset class="tasting-notes">
+                    Number Bought/Tried: <input type="number" name="numberBought" value="" min=0><br>
+                    Color: <input type="text" name="color" value=""><br>
+                    Flavor: <input type="text" name="flavor" value=""><br>
+                    Aroma: <input type="text" name="aroma" value=""><br>
+                    Finish: <input type="text" name="finish" value=""><br>
+                    Would you buy it again? <input type="checkbox" name="buyAgain"><br>
+                    Overall Rating: <input type="number" name="rating" value="" min=0 max=5><br>
+                    Comments: <textarea id="tasting-comments" name="comments" placeholder=""></textarea>  <br>
+                </fieldset>
+                <input type="submit" value="Add to Journal">
+            </form>
+        </div>
     </body>
 </html>
