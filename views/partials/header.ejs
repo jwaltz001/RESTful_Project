@@ -1,6 +1,6 @@
-<nav>
+<nav class="nav-extended">
     <div class="nav-wrapper">
-        <a href="#" class="brand-logo center">RESTful Drinks</a>
+        <h2 class="brand-logo center">RESTful Drinks</h2>
         <a href="#" data-target="user-account" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
         <% if (user) { %>
@@ -14,23 +14,22 @@
                 </li>
         <% } %>
         </ul>
-        <div class="col s12">
-        <% for (let i = 0; i <= siteMapPosition; i++) { %>
-            <% if (siteMapPosition != 0 && siteMapPosition <= 2 ) {%>
-            <a href="<%= tabTitle[i].url %>" class="breadcrumb"><%=tabTitle[i].title %></a>
-            <% }else if (siteMapPosition == 3 && i != 2) { %>
-            <a href="<%= tabTitle[i].url %>" class="breadcrumb"><%=tabTitle[i].title %></a>
-                <% if (subposition == "edit"){ %>
-                <a href="<%= tabTitle[4].url %>" class="breadcrumb"><%= tabTitle[4].title %></a>
+        </div>
+        <div class="nav-content">
+            <% for (let i = 0; i <= siteMapPosition; i++) { %>
+                <% if (siteMapPosition != 0 && siteMapPosition <= 2) {%>
+                <a href="<%= tabTitle[i].url %>" class="breadcrumb"><%=tabTitle[i].title %></a>
+                <% }else if (siteMapPosition == 3 && subposition == "show") { %>
+                <a href="<%= tabTitle[i].url %>" class="breadcrumb"><%=tabTitle[i].title %></a>
+                <% } else if (subposition == "edit" && i != 2){ %>
+                <a href="<%= tabTitle[i].url %>" class="breadcrumb"><%= tabTitle[i].title %></a>
                 <% } %>
             <% } %>
-        <% } %>
         </div>
-     </div>
 </nav>
 <ul class="right sidenav" id="user-account">
 <% if (user) { %>
-    <a class="waves-effect waves-light red darken-3 btn-large modal-trigger" href="/logout">Logout</a>
+    <a class="waves-effect waves-light red darken-3 btn-large modal-trigger" href="/sessions/logout">Logout</a>
 <% }else{ %>
         <li>
             <a class="waves-effect waves-light red darken-3 btn-large modal-trigger" href="#login-modal">Log in</a>

@@ -1,0 +1,19 @@
+<%for (let  [key, value] of Object.entries(wine._doc)) {%>
+    <% if (key !== "_id" && key !== "createdAt" && key !== "updatedAt" && key !== "__v" && key !== "name"){ %>
+    <tr>
+        <th class="flow-text"> <%= key.toUpperCase() %></th>
+        <td class="flow-text"><%= value %></td>
+    </tr>
+    <% } %>
+<%}%>
+
+<!-- Delete from a modal with the proper id? Move to edit or show page -->
+    <!-- <div class="modal-footer">
+        <div class="col s6">
+            <form action="/wines/<%= user.savedWines[i]._id %>?_method=DELETE" method="POST">
+                <button class="waves-effect waves-light btn-flat" type="submit">Delete Entry</button>
+            </form>
+        </div>
+      <a href="#!" class="modal-close waves-effect waves-light red darken-3 btn-large">Cancel</a>
+    </div>
+  </div> -->

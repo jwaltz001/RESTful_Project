@@ -75,7 +75,8 @@ app.get("/", (req,res) => {
     {
         user: req.session.currentUser,
         tabTitle: navInfo(),
-        siteMapPosition: 0
+        siteMapPosition: 0,
+        subposition: "home"
     });
 });
 //Controllers

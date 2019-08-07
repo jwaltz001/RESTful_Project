@@ -13,7 +13,10 @@
             <% if (user){ %>
             <div class="row">
                 <h2>Welcome, <%= user.name %></h2>
-                <a href="/wines" class="waves-effect waves-light red darken-3 btn-large">Open My Wine Journal</a>
+                <div class="col s12 ">
+                    <a href="/wines" class="waves-effect waves-light red darken-3 btn hoverable">Open My Wine Journal</a>
+                </div>
+
             </div>
             <% } %>
         </div>

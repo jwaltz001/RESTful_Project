@@ -22,7 +22,8 @@ router.get('/' , (req, res) => {
         {
          user: foundUser,
          tabTitle: navInfo(req.params.id),
-         siteMapPosition: 1
+         siteMapPosition: 1,
+         subposition: "index"
         });
     });
 });
@@ -61,7 +62,7 @@ router.get("/:id/edit", (req,res) => {
             user: req.session.currentUser,
             wine: foundUser.savedWines.id(req.params.id),
             tabTitle: navInfo(req.params.id),
-            siteMapPosition: 3,
+            siteMapPosition: 4,
             subposition: "edit"
         });
     });
@@ -91,7 +92,7 @@ router.put("/:id", (req,res) => {
         foundUser.savedWines.id(req.params.id).remove();
         foundUser.savedWines.push(req.body);
         foundUser.save();
-        res.redirect("/wines/");
+        res.redirect("/wines/"+foundUser.savedWines[foundUser.savedWines.length-1]._id);
     });
 });
 
