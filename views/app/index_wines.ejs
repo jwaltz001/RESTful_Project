@@ -13,7 +13,7 @@
             <h2><%=user.name%>'s Wine Journal:</h2>
             <h4>Contents</h4>
             <div class="row">
-                <a class="waves-effect waves-light red darken-3 btn" href="/wines/new">Add new wine journal entry</a>
+                <a class="waves-effect waves-light red darken-3 btn-large" href="/wines/new">Add new wine journal entry</a>
             </div>
             <% for (let i = 0; i < user.savedWines.length; i++) {%>
             <div class="row">
@@ -27,7 +27,7 @@
                     <div class="card-action">
                         <a class="btn-floating btn-large waves-effect waves-light red" href="/wines/<%= user.savedWines[i]._id%>"><i class="material-icons">add</i></a>
                         <form action="/wines/<%= user.savedWines[i]._id %>?_method=DELETE" method="POST">
-                            <button class="waves-effect waves-light red darken-3 btn" type="submit">Delete Entry</button>
+                            <button class="waves-effect waves-light red darken-3 btn-large" type="submit">Delete Entry</button>
                         </form>
                     </div>
                   </div>
@@ -35,7 +35,7 @@
             </div>
             <%}%>
             <div class="">
-            <a class="waves-effect waves-light red darken-3 btn" href="/">Back to Homepage</a>
+            <a class="waves-effect waves-light red darken-3 btn-large" href="/">Back to Homepage</a>
             </div>
         </div>
     <% include ../partials/session_modals%>

@@ -10,33 +10,33 @@
                     <a class="waves-effect waves-light red darken-3 btn modal-trigger" href="#login-modal">Log in</a>
                 </li>
                 <li>
-                    <a class="waves-effect waves-light red darken-3 btn" href="/users/new">Sign Up</a>
+                    <a class="waves-effect waves-light red darken-3 btn modal-trigger" href="#signup-modal">Sign Up</a>
                 </li>
         <% } %>
         </ul>
         <div class="col s12">
         <% for (let i = 0; i <= siteMapPosition; i++) { %>
-                <% if (siteMapPosition <= 2) {%>
-                <a href="<%= tabTitle[i].url %>" class="breadcrumb"><%=tabTitle[i].title %></a>
-                <% }else if (siteMapPosition == 3 && i != 2) { %>
-                <a href="<%= tabTitle[i].url %>" class="breadcrumb"><%=tabTitle[i].title %></a>
-                    <% if (subposition == "edit"){ %>
-                    <a href="<%= tabTitle[4].url %>" class="breadcrumb"><%= tabTitle[4].title %></a>
-                    <% } %>
+            <% if (siteMapPosition != 0 && siteMapPosition <= 2 ) {%>
+            <a href="<%= tabTitle[i].url %>" class="breadcrumb"><%=tabTitle[i].title %></a>
+            <% }else if (siteMapPosition == 3 && i != 2) { %>
+            <a href="<%= tabTitle[i].url %>" class="breadcrumb"><%=tabTitle[i].title %></a>
+                <% if (subposition == "edit"){ %>
+                <a href="<%= tabTitle[4].url %>" class="breadcrumb"><%= tabTitle[4].title %></a>
                 <% } %>
-                <% } %>
+            <% } %>
+        <% } %>
         </div>
      </div>
 </nav>
 <ul class="right sidenav" id="user-account">
 <% if (user) { %>
-    <a class="waves-effect waves-light red darken-3 btn modal-trigger" href="/logout">Logout</a>
+    <a class="waves-effect waves-light red darken-3 btn-large modal-trigger" href="/logout">Logout</a>
 <% }else{ %>
         <li>
-            <a class="waves-effect waves-light red darken-3 btn modal-trigger" href="#login-modal">Log in</a>
+            <a class="waves-effect waves-light red darken-3 btn-large modal-trigger" href="#login-modal">Log in</a>
         </li>
         <li>
-            <a class="waves-effect waves-light red darken-3 btn" href="/users/new">Sign Up</a>
+            <a class="waves-effect waves-light red darken-3 btn-large modal-trigger" href="#signup-modal">Sign Up</a>
         </li>
 <% } %>
 </ul>

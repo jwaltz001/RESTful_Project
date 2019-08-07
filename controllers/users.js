@@ -4,14 +4,15 @@ const bcrypt = require("bcrypt");
 const User = require("../models/users.js");
 
 //GET
-router.get("/new", (req,res) => {
-    res.render("users/new_user.ejs");
-});
+// router.get("/new", (req,res) => {
+//     res.render("users/new_user.ejs");
+// });
 
 //POST
 router.post("/", (req,res) => {
     req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10));
     User.create(req.body, (err, newUser) => {
+        req.session.currentUser = newUser;
         res.redirect("/");
     });
 });
