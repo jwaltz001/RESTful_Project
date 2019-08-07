@@ -1,23 +1,41 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head>
-        <meta charset="utf-8">
-        <title>SHOW WINE</title>
+        <% include ../partials/head.ejs %>
     </head>
     <body>
-        <h1>Show Details: Wine</h1>
-        <dl class="">
-            <%for (let  [key, value] of Object.entries(wine._doc)) {%>
-                <% if (key !== "_id" && key !== "createdAt" && key !== "updatedAt" && key !== "__v"){ %>
-                <dt> <%= key %></dt>
-                <dd><%= value %></dd>
-                <% } %>
-            <%}%>
-        </dl>
-        <form class="" action="" method="post">
-            <input type="submit" name="" value="Bought/Tried Again">
-        </form>
-        <a href="/wines/<%= wine._id%>/edit">Edit</a>
-        <a href="/wines"><button type="button" name="button">Back to Wine List</button> </a>
+        <header>
+            <% include ../partials/header.ejs %>
+        </header>
+        <div id="show-wine-background" class="background-img">
+        </div>
+        <div class="container">
+            <h2 class="white-text">Wine Entry Page</h2>
+            <div class="row">
+                <div class="col s12 m6">
+                  <div class="card blue-grey darken-1">
+                    <div class="card-content white-text">
+                        <h6 id="show-card-title" class="cart-title flow-text"><%= wine.name %></h6>
+                        <dl>
+                            <%for (let  [key, value] of Object.entries(wine._doc)) {%>
+                                <% if (key !== "_id" && key !== "createdAt" && key !== "updatedAt" && key !== "__v" && key !== "name"){ %>
+                                <dt class="flow-text"> <%= key.toUpperCase() %></dt>
+                                <dd class="flow-text"><%= value %></dd>
+                                <% } %>
+                            <%}%>
+                        </dl>
+                    </div>
+                    <div class="card-action">
+                        <!-- <form class="" action="" method="post">
+                            <input class="waves-effect waves-light red darken-3 btn" type="submit" name="" value="Bought/Tried Again">
+                        </form> -->
+                        <a class="waves-effect waves-light red darken-3 btn" href="/wines/<%= wine._id%>/edit">Edit</a>
+                        <a class="waves-effect waves-light red darken-3 btn" href="/wines">Back to Wine List</a>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    <% include ../partials/scripts.ejs %>
     </body>
 </html>

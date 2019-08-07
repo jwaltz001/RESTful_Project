@@ -7,9 +7,9 @@ const navInfo = (id) => {
     return [
         {title:"Home", url:"/"},
         {title:"Wine Journal",url:"/wines"},
+        {title:"New", url:"/wines/new"},
         {title:"Entry", url:"/wines/"+id},
-        {title:"Edit", url:"/wines/"+id+"/edit"},
-        {title:"New", url:"/wines/new"}
+        {title:"Edit", url:"/wines/"+id+"/edit"}
     ];
 };
 
@@ -22,7 +22,7 @@ router.get('/' , (req, res) => {
         {
          user: foundUser,
          tabTitle: navInfo(req.params.id),
-         siteMapPostion: 1
+         siteMapPosition: 1
         });
     });
 });
@@ -31,8 +31,9 @@ router.get('/' , (req, res) => {
 router.get("/new", (req,res) => {
     res.render("app/new_wine.ejs",
     {
+        user: req.session.currentUser,
         tabTitle: navInfo(req.params.id),
-        siteMapPostion: 3,
+        siteMapPosition: 2,
         subposition: "new"
     });
 });
@@ -42,9 +43,11 @@ router.get("/:id", (req,res) => {
     User.findById(req.session.currentUser._id, (err,foundUser) => {
         res.render("app/show_wine.ejs",
         {
+            user: req.session.currentUser,
             wine: foundUser.savedWines.id(req.params.id),
             tabTitle: navInfo(req.params.id),
-            siteMapPostion: 2
+            siteMapPosition: 3,
+            subposition: "show"
         });
     });
 });
@@ -52,12 +55,13 @@ router.get("/:id", (req,res) => {
     //edit
 router.get("/:id/edit", (req,res) => {
     User.findById(req.session.currentUser._id, (err,foundUser) => {
-        const editingWine = foundUser.savedWines.id(req.params.id);
+        //const editingWine = foundUser.savedWines.id(req.params.id);
         res.render("app/edit_wine.ejs",
         {
-            wine: editingWine,
+            user: req.session.currentUser,
+            wine: foundUser.savedWines.id(req.params.id),
             tabTitle: navInfo(req.params.id),
-            siteMapPostion: 3,
+            siteMapPosition: 3,
             subposition: "edit"
         });
     });

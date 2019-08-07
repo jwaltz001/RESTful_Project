@@ -15,15 +15,16 @@
         <% } %>
         </ul>
         <div class="col s12">
-        <% for (let i = 0; i <= siteMapPostion; i++) { %>
-            <% if (i < 3) { %>
+        <% for (let i = 0; i <= siteMapPosition; i++) { %>
+                <% if (siteMapPosition <= 2) {%>
                 <a href="<%= tabTitle[i].url %>" class="breadcrumb"><%=tabTitle[i].title %></a>
-                <% } else if (i == 3) { %>
-                    <a href="<%= tabTitle[i].url %>" class="breadcrumb"><%= tabTitle[i].title %></a>
-                <% } else if (i == 4) {%>
-                    <a href="<%= tabTitle[i].url %>" class="breadcrumb"><%= tabTitle[i].title %></a>
+                <% }else if (siteMapPosition == 3 && i != 2) { %>
+                <a href="<%= tabTitle[i].url %>" class="breadcrumb"><%=tabTitle[i].title %></a>
+                    <% if (subposition == "edit"){ %>
+                    <a href="<%= tabTitle[4].url %>" class="breadcrumb"><%= tabTitle[4].title %></a>
+                    <% } %>
                 <% } %>
-            <% } %>
+                <% } %>
         </div>
      </div>
 </nav>

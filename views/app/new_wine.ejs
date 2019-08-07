@@ -4,30 +4,102 @@
         <% include ../partials/head.ejs %>
     </head>
     <body>
-        <div class="container">
-            <h1>New Wine Entry</h1>
-            <form class="" action="/wines" method="POST">
-                <fieldset class="wine-notes">
-                    Name: <input type="text" name="name" value=""><br>
-                    Type of Wine: <input type="text" name="type" value=""><br>
-                    Brand/Vineyard: <input type="text" name="brand" value=""><br>
-                    Place of Origin (Country/Region): <input type="text" name="origin" value=""><br>
-                    Year: <input type="number" name="year" value=""><br>
-                    Price: <input type="text" name="price" value=""><br>
-                    Where you bought/tried it: <input type="text" name="boughtAt" value=""><br>
-                </fieldset>
-                <fieldset class="tasting-notes">
-                    Number Bought/Tried: <input type="number" name="numberBought" value="" min=0><br>
-                    Color: <input type="text" name="color" value=""><br>
-                    Flavor: <input type="text" name="flavor" value=""><br>
-                    Aroma: <input type="text" name="aroma" value=""><br>
-                    Finish: <input type="text" name="finish" value=""><br>
-                    Would you buy it again? <input type="checkbox" name="buyAgain"><br>
-                    Overall Rating: <input type="number" name="rating" value="" min=0 max=5><br>
-                    Comments: <textarea id="tasting-comments" name="comments" placeholder=""></textarea>  <br>
-                </fieldset>
-                <input type="submit" value="Add to Journal">
-            </form>
+        <header>
+            <% include ../partials/header.ejs %>
+        </header>
+        <div id="new-wine-background" class="background-img">
         </div>
+        <div class="container form-background">
+            <h2 class="form-title">New Wine Entry</h2>
+            <div class="row">
+            <form class="col s12" action="/wines" method="POST">
+                <fieldset class="wine-notes">
+                    <legend>Wine Notes</legend>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="name" type="text" name="name">
+                            <label class="active black-text" for="name">Wine Name</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input id="type" type="text" name="type">
+                            <label for="type">Type of Wine:</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="brand" type="text" name="brand">
+                            <label for="brand">Brand/Vineyard:</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input id="origin" type="text" name="origin">
+                            <label for="origin">Country/Region:</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="year" type="number" name="year">
+                            <label for="year">Year:</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s2">
+                            <input id="price" type="text" name="price">
+                            <label for="price">Price:</label>
+                        </div>
+                        <div class="input-field col s5">
+                            <input id="boughtAt" type="text" name="boughtAt">
+                            <label for="boughtAt">Where you bought/tried it:</label>
+                        </div>
+                        <div class="input-field col s5">
+                            <input id="numberBought" type="number" name="numberBought" min=0>
+                            <label for="numberBought">Number Bought/Tried:</label>
+                        </div>
+
+                    </div>
+                </fieldset>
+                <fieldset class="wine-notes">
+                    <legend>Tasting Notes</legend>
+                    <div class="row">
+                        <div class="input-field col s3">
+                            <input id="color" type="text" name="color">
+                            <label for="color">Color:</label>
+                        </div>
+                        <div class="input-field col s3">
+                            <input id="flavor" type="text" name="flavor">
+                            <label for="flavor">Flavor:</label>
+                        </div>
+                        <div class="input-field col s3">
+                            <input id="aroma" type="text" name="aroma">
+                            <label for="aroma">Aroma:</label>
+                        </div>
+                        <div class="input-field col s3">
+                            <input id="finish" type="text" name="finish">
+                            <label for="finish">Finish:</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s3">
+                            <input id="rating" type="number" name="rating" min=0 max=5>
+                            <label for="rating">Overall Rating: </label>
+                        </div>
+                        <div class="input-field col s4">
+                            <label for="buyAgain">
+                                <input type="checkbox" class="filled-in" for="buyAgain" id="buyAgain"/>
+                                <span>I would buy it again</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <textarea id="tasting-comments" class="materialize-textarea" name="comments" data-length="50"></textarea>
+                            <label for="tasting-comments">Tasting Notes/Comments:</label>
+                        </div>
+                    </div>
+                </fieldset>
+                <input class="waves-effect waves-light red darken-3 btn form-submit" type="submit" value="Add to Journal">
+            </form>
+            </div>
+        </div>
+    <% include ../partials/scripts.ejs %>
     </body>
 </html>

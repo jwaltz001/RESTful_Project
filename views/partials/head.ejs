@@ -7,5 +7,9 @@
 <link rel="stylesheet" href="/css/styles.css">
 
 <title>
-    RESTful | <%= tabTitle[siteMapPostion].title %>
+    RESTful | <%if (siteMapPosition != 3 || subposition == "show") { %>
+    <%= tabTitle[siteMapPosition].title %>
+    <% }else if (siteMapPosition == 3 && subposition == "edit"){ %>
+    <%= tabTitle[4].title %>
+    <% } %>
 </title>
