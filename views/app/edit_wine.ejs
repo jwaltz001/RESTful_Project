@@ -2,7 +2,6 @@
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
-        <%=include ../partials/head.ejs%>
         <title>EDIT WINE</title>
     </head>
     <body>
@@ -13,13 +12,16 @@
                     Name: <input type="text" name="name" value="<%= wine.name %>"><br>
                     Type of Wine: <input type="text" name="type" value="<%= wine.type %>"><br>
                     Brand/Vineyard: <input type="text" name="brand" value="<%= wine.brand %>"><br>
-                    Place of Origin (Country/Region): <input type="text" name="origin" value="<%= wine.origin %>"><br>
+                    Place of Origin (Country/Region): <input type="text" name="origin"
+                    value="<%= wine.origin %>"><br>
                     Year: <input type="number" name="year" value="<%= wine.year %>"><br>
                     Price: <input type="text" name="price" value="<%= wine.price %>"><br>
-                    Where you bought/tried it: <input type="text" name="boughtAt" value="<%= wine.boughtAt %>"><br>
+                    Where you bought/tried it: <input type="text" name="boughtAt"
+                    value="<%= wine.boughtAt %>"><br>
                 </fieldset>
                 <fieldset class="tasting-notes">
-                    Number Bought/Tried: <input type="number" name="numberBought" value="<%= wine.numberBought %>" min=0><br>
+                    Number Bought/Tried: <input type="number" name="numberBought"
+                    value="<%= wine.numberBought %>" min=0><br>
                     Color: <input type="text" name="color" value="<%= wine.color %>"><br>
                     Flavor: <input type="text" name="flavor" value="<%= wine.flavor %>"><br>
                     Aroma: <input type="text" name="aroma" value="<%= wine.aroma %>"><br>
@@ -34,7 +36,7 @@
                             >
                             <br>
                     Overall Rating: <input type="number" name="rating" value="<%= wine.rating %>" min=0 max=5><br>
-                    Comments: <textarea id="tasting-comments" name="comments" placeholder=""><%= wine.comments %></textarea>
+                    Comments: <textarea id="tasting-comments" name="comments"><%= wine.comments %></textarea>
                 </fieldset>
                 <input type="submit" value="Save Changes">
             </form>

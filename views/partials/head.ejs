@@ -10,6 +10,8 @@
     RESTful | <%if (siteMapPosition != 3 || subposition == "show") { %>
     <%= tabTitle[siteMapPosition].title %>
     <% }else if (siteMapPosition == 3 && subposition == "edit"){ %>
+    <%= tabTitle[siteMapPosition].title %>
+    <% }else if (siteMapPosition == 3){ %>
     <%= tabTitle[4].title %>
     <% } %>
 </title>
