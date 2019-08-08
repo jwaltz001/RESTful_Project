@@ -4,22 +4,15 @@
         <a href="#" data-target="user-account" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
         <% if (user) { %>
-            <a href="/sessions/logout">Logout</a>
-        <% }else{ %>
-                <li>
-                    <a class="waves-effect waves-light red darken-3 btn modal-trigger" href="#login-modal">Log in</a>
-                </li>
-                <li>
-                    <a class="waves-effect waves-light red darken-3 btn modal-trigger" href="#signup-modal">Sign Up</a>
-                </li>
+            <a id="logout-header" href="/sessions/logout">Logout</a>
         <% } %>
         </ul>
-        </div>
+    </div>
         <div class="nav-content">
             <% for (let i = 0; i <= siteMapPosition; i++) { %>
                 <% if (siteMapPosition != 0 && siteMapPosition <= 2) {%>
                 <a href="<%= tabTitle[i].url %>" class="breadcrumb"><%=tabTitle[i].title %></a>
-                <% }else if (siteMapPosition == 3 && subposition == "show") { %>
+                <% }else if (i != 2 && siteMapPosition == 3 && subposition == "show") { %>
                 <a href="<%= tabTitle[i].url %>" class="breadcrumb"><%=tabTitle[i].title %></a>
                 <% } else if (subposition == "edit" && i != 2){ %>
                 <a href="<%= tabTitle[i].url %>" class="breadcrumb"><%= tabTitle[i].title %></a>
@@ -29,7 +22,7 @@
 </nav>
 <ul class="right sidenav" id="user-account">
 <% if (user) { %>
-    <a class="waves-effect waves-light red darken-3 btn-large modal-trigger" href="/sessions/logout">Logout</a>
+    <a class="waves-effect waves-light red darken-3 btn modal-trigger" href="/sessions/logout">Logout</a>
 <% }else{ %>
         <li>
             <a class="waves-effect waves-light red darken-3 btn-large modal-trigger" href="#login-modal">Log in</a>

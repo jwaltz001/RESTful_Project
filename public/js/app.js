@@ -24,6 +24,6 @@ const backgroundPicArr = [
 // }
 $("#home-background").append("<img src="+backgroundPicArr[0]+"</img>");
 $("#wine-index-background").append("<img src="+backgroundPicArr[1]+"</img>");
-$("#new-wine-background").append("<img src="+backgroundPicArr[2]+"</img>");
-$("#show-wine-background").append("<img src="+backgroundPicArr[3]+"</img>");
-$("#edit-wine-background").append("<img src="+backgroundPicArr[4]+"</img>");
+$("#new-wine-background").append("<img src="+backgroundPicArr[3]+"</img>");
+$("#show-wine-background").append("<img src="+backgroundPicArr[4]+"</img>");
+$("#edit-wine-background").append("<img src="+backgroundPicArr[2]+"</img>");

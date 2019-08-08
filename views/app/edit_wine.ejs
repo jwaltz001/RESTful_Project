@@ -103,8 +103,12 @@
                     </fieldset>
                     <div class="form-footer">
                         <input class="waves-effect waves-light red darken-3 btn-large form-submit" type="submit" value="Save Changes">
-                    </div>
                 </form>
+                        <form action="/wines/<%= wine._id %>?_method=DELETE" method="POST">
+                            <button class="waves-effect waves-light red darken-3 btn-large" type="submit">Delete Entry</button>
+                        </form>
+                    </div>
+
             </div>
             <div class="row">
                 <a class="waves-effect waves-light grey btn-flat btn-large form-back-link" href="/wines">Back to All Wines</a>

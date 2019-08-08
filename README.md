@@ -13,12 +13,13 @@ https://github.com/jwaltz001/RESTful_Project
 work on getting backgrounds more responsive
 -deal with signup/login errors
 -close btn on sign up modal
--Alert before delete
+-Alert before delete (move to edit page)
+put account info in nav with logout
 ## Future Development:
 -Sort/Filter wine Journal
 -API call to access based wine data at start of entry
--reorganize to make more social between users
--make a common wine collection for the site with ratings, etc and private notes for users wines they've selected
+-reorganize to make more social between users (make a common wine collection for the site with ratings, etc and private notes for users wines they've selected)
+-use location/maps
 -make tab titles in servers and routers a single variable
 -Super user rights
 
