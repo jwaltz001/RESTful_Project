@@ -8,85 +8,85 @@
             <% include ../partials/header.ejs %>
         </header>
         <div id="show-wine-background" class="background-img">
-        </div>
-        <div class="container">
-            <h2 class="white-text">Wine Entry Page</h2>
-            <div class="row">
-                <div class="col s12 m12 l10">
-                  <div class="card form-background">
-                    <div class="card-content black-text">
-                        <h5 id="show-card-title" class="cart-title center-align flow-text"><%= wine.name %></h5>
-                        <table class="highlight">
-                            <tr>
-                                <th class="flow-text">Brand/Vinyard</th>
-                                <td class="flow-text"><%= wine.brand %></td>
-                            </tr>
-                            <tr>
-                                <th class="flow-text">Type</th>
-                                <td class="flow-text"><%= wine.type %></td>
-                            </tr>
-                            <tr>
-                                <th class="flow-text">Country/Region</th>
-                                <td class="flow-text"><%= wine.origin %></td>
-                            </tr>
-                            <tr>
-                                <th class="flow-text">Year</th>
-                                <td class="flow-text"><%= wine.year %></td>
-                            </tr>
-                            <tr>
-                                <th class="flow-text">Price</th>
-                                <td class="flow-text"><%= wine.price %></td>
-                            </tr>
-                            <tr>
-                                <th class="flow-text">Where you got it</th>
-                                <td class="flow-text"><%= wine.boughtAt %></td>
-                            </tr>
-                            <tr>
-                                <th class="flow-text">Color</th>
-                                <td class="flow-text"><%= wine.color %></td>
-                            </tr>
-                            <tr>
-                                <th class="flow-text">Flavor</th>
-                                <td class="flow-text"><%= wine.flavor %></td>
-                            </tr>
-                            <tr>
-                                <th class="flow-text">Aroma</th>
-                                <td class="flow-text"><%= wine.aroma %></td>
-                            </tr>
-                            <tr>
-                                <th class="flow-text">Finish</th>
-                                <td class="flow-text"><%= wine.finish %></td>
-                            </tr>
-                            <tr>
-                                <th class="flow-text">Your rating</th>
-                                <td class="flow-text"><%= wine.rating %></td>
-                            </tr>
-                            <tr>
-                                <th class="flow-text">Would you buy it again?</th>
-                                <td class="flow-text">
-                                <% if (wine.buyAgain === true) { %>
-                                    <i class="small material-icons">check_box</i>
-                                <% } else { %>
-                                    <i class="small material-icons">close</i>
-                                <% } %>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th class="flow-text">Number of times tried</th>
-                                <td class="flow-text"><%= wine.numberBought %></td>
-                            </tr>
-                        </table>
+            <div class="container">
+                <h2 class="white-text">Wine Entry Page</h2>
+                <div class="row">
+                    <div class="col s12 m12 l10">
+                      <div class="card form-background">
+                        <div class="card-content black-text">
+                            <h5 id="show-card-title" class="cart-title center-align flow-text"><%= wine.name %></h5>
+                            <table class="highlight">
+                                <tr>
+                                    <th class="flow-text">Brand/Vinyard</th>
+                                    <td class="flow-text"><%= wine.brand %></td>
+                                </tr>
+                                <tr>
+                                    <th class="flow-text">Type</th>
+                                    <td class="flow-text"><%= wine.type %></td>
+                                </tr>
+                                <tr>
+                                    <th class="flow-text">Country/Region</th>
+                                    <td class="flow-text"><%= wine.origin %></td>
+                                </tr>
+                                <tr>
+                                    <th class="flow-text">Year</th>
+                                    <td class="flow-text"><%= wine.year %></td>
+                                </tr>
+                                <tr>
+                                    <th class="flow-text">Price</th>
+                                    <td class="flow-text"><%= wine.price %></td>
+                                </tr>
+                                <tr>
+                                    <th class="flow-text">Where you got it</th>
+                                    <td class="flow-text"><%= wine.boughtAt %></td>
+                                </tr>
+                                <tr>
+                                    <th class="flow-text">Color</th>
+                                    <td class="flow-text"><%= wine.color %></td>
+                                </tr>
+                                <tr>
+                                    <th class="flow-text">Flavor</th>
+                                    <td class="flow-text"><%= wine.flavor %></td>
+                                </tr>
+                                <tr>
+                                    <th class="flow-text">Aroma</th>
+                                    <td class="flow-text"><%= wine.aroma %></td>
+                                </tr>
+                                <tr>
+                                    <th class="flow-text">Finish</th>
+                                    <td class="flow-text"><%= wine.finish %></td>
+                                </tr>
+                                <tr>
+                                    <th class="flow-text">Your rating</th>
+                                    <td class="flow-text"><%= wine.rating %></td>
+                                </tr>
+                                <tr>
+                                    <th class="flow-text">Would you buy it again?</th>
+                                    <td class="flow-text">
+                                    <% if (wine.buyAgain === true) { %>
+                                        <i class="small material-icons">check_box</i>
+                                    <% } else { %>
+                                        <i class="small material-icons">close</i>
+                                    <% } %>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="flow-text">Number of times tried</th>
+                                    <td class="flow-text"><%= wine.numberBought %></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="card-action">
+                            <!-- <form class="" action="" method="post">
+                                <input class="waves-effect waves-light red darken-3 btn" type="submit" name="" value="Bought/Tried Again">
+                            </form> -->
+                            <a class="waves-effect waves-light red darken-3 btn-large" href="/wines/<%= wine._id%>/edit">Edit</a>
+                        </div>
+                      </div>
                     </div>
-                    <div class="card-action">
-                        <!-- <form class="" action="" method="post">
-                            <input class="waves-effect waves-light red darken-3 btn" type="submit" name="" value="Bought/Tried Again">
-                        </form> -->
-                        <a class="waves-effect waves-light red darken-3 btn-large" href="/wines/<%= wine._id%>/edit">Edit</a>
-                    </div>
-                  </div>
                 </div>
+                <a class="waves-effect waves-light grey btn-flat btn-large form-back-link" href="/wines">Back to All Wines</a>
             </div>
-            <a class="waves-effect waves-light grey btn-flat btn-large form-back-link" href="/wines">Back to All Wines</a>
         </div>
     <% include ../partials/scripts.ejs %>
     </body>

@@ -1,13 +1,19 @@
+//Materialize JS inits
+    //Modals
 $(document).ready(function(){
     $(".modal").modal();
 });
+    //User side bar on small screens
 $(document).ready(function(){
     $('.sidenav').sidenav();
   });
+    //Forms
+        //Character count on comments
  $(document).ready(function() {
       $('textarea#tasting-comments').characterCounter();
     });
 
+//Page Backgrounds
 const backgroundPicArr = [
 'https://images.unsplash.com/photo-1470158499416-75be9aa0c4db?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80',
 'https://images.unsplash.com/photo-1525576064846-083dce8b33ba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80',
@@ -22,8 +28,16 @@ const backgroundPicArr = [
 // for (let i = 0; i < backgroundPicArr.length; i++) {
 //     backgroundPicArr[i]
 // }
-$("#home-background").append("<img src="+backgroundPicArr[0]+"</img>");
-$("#wine-index-background").append("<img src="+backgroundPicArr[1]+"</img>");
-$("#new-wine-background").append("<img src="+backgroundPicArr[3]+"</img>");
-$("#show-wine-background").append("<img src="+backgroundPicArr[4]+"</img>");
-$("#edit-wine-background").append("<img src="+backgroundPicArr[2]+"</img>");
+$("#home-background").css("background-image","url('"+backgroundPicArr[0]+"')");
+$("#wine-index-background").css("background-image","url('"+backgroundPicArr[1]+"')");
+$("#new-wine-background").css("background-image","url('"+backgroundPicArr[3]+"')");
+$("#show-wine-background").css("background-image","url('"+backgroundPicArr[4]+"')");
+$("#edit-wine-background").css("background-image","url('"+backgroundPicArr[2]+"')");
+
+//Wine Journal Search
+
+// $("#api-wine-search").on(submit,(event) => {
+//     event.preventDefault();
+//     //empty wine display
+//
+// });

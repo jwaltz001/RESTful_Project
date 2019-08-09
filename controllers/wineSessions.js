@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const Wines = require("../models/wines.js");
 const User = require("../models/users.js");
+//const query = new mongoose.Query();
 
 const navInfo = (id) => {
     return [
@@ -80,6 +81,10 @@ router.post("/", (req,res) => {
         res.redirect("/wines");
     });
 });
+
+// router.post("/search", (req,res) => {
+//
+// });
 
 //PUT
 router.put("/:id", (req,res) => {
