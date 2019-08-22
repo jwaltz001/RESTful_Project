@@ -4,7 +4,7 @@
     "node": "12.4.0"
   },
   "version": "1.0.0",
-  "description": "",
+  "description": "deployed app https://agile-reef-61883.herokuapp.com/ github repo https://github.com/jwaltz001/RESTful_Project",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
