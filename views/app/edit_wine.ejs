@@ -8,110 +8,110 @@
             <% include ../partials/header.ejs %>
         </header>
         <div id="edit-wine-background" class="background-img horizontal-background">
-        </div>
-        <div class="container form-background">
-            <h2 class="form-title">Edit Wine Entry</h2>
-            <div class="row">
-                <form class="col s12" action="/wines/<%= wine._id %>?_method=PUT" method="POST">
-                    <fieldset class="wine-notes">
-                        <legend>Wine Notes</legend>
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <input id="name" type="text" name="name" value="<%= wine.name %>">
-                                <label class="active black-text" for="name">Wine Name</label>
+            <div class="container form-background">
+                <h2 class="form-title">Edit Wine Entry</h2>
+                <div class="row">
+                    <form class="col s12" action="/wines/<%= wine._id %>?_method=PUT" method="POST">
+                        <fieldset class="wine-notes">
+                            <legend>Wine Notes</legend>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input id="name" type="text" name="name" value="<%= wine.name %>">
+                                    <label class="active black-text" for="name">Wine Name</label>
+                                </div>
                             </div>
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <input id="type" type="text" name="type" value="<%= wine.type %>">
+                                    <label for="type">Type of Wine:</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <input id="brand" type="text" name="brand" value="<%= wine.brand %>">
+                                    <label for="brand">Brand/Vineyard:</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <input id="origin" type="text" name="origin" value="<%= wine.origin %>">
+                                    <label for="origin">Country/Region:</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <input id="year" type="number" name="year" value="<%= wine.year %>">
+                                    <label for="year">Year:</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s2">
+                                    <input id="price" type="text" name="price" value="<%= wine.price %>">
+                                    <label for="price">Price:</label>
+                                </div>
+                                <div class="input-field col s7">
+                                    <input id="boughtAt" type="text" name="boughtAt" value="<%= wine.boughtAt %>">
+                                    <label for="boughtAt">Where you got it:</label>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <fieldset class="wine-notes">
+                            <legend>Tasting Notes</legend>
+                            <div class="row">
+                                <div class="input-field col s3">
+                                    <input id="color" type="text" name="color" value="<%= wine.color %>">
+                                    <label for="color">Color:</label>
+                                </div>
+                                <div class="input-field col s3">
+                                    <input id="flavor" type="text" name="flavor" value="<%= wine.flavor %>">
+                                    <label for="flavor">Flavor:</label>
+                                </div>
+                                <div class="input-field col s3">
+                                    <input id="aroma" type="text" name="aroma" value="<%= wine.aroma %>">
+                                    <label for="aroma">Aroma:</label>
+                                </div>
+                                <div class="input-field col s3">
+                                    <input id="finish" type="text" name="finish" value="<%= wine.finish %>">
+                                    <label for="finish">Finish:</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <label for="buyAgain">
+                                        <input type="checkbox" class="filled-in red" for="buyAgain" id="buyAgain"
+                                        <% if (wine.buyAgain === true) { %>
+                                            checked= "checked"
+                                        <%}%>
+                                        />
+                                        <span>I would buy it again</span>
+                                    </label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <input id="numberBought" type="number" name="numberBought" value="<%= wine.numberBought %>" min=0>
+                                    <label for="numberBought"># Bought/Tried:</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <input id="rating" type="number" name="rating" value="<%= wine.rating %>" min=0 max=5>
+                                    <label for="rating">Overall Rating: </label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <textarea id="tasting-comments" class="materialize-textarea" name="comments" data-length="250"><%= wine.comments %></textarea>
+                                    <label for="tasting-comments">Tasting Notes/Comments:</label>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <div class="form-footer">
+                            <input class="waves-effect waves-light red darken-3 btn-large form-submit" type="submit" value="Save Changes">
+                    </form>
+                            <form action="/wines/<%= wine._id %>?_method=DELETE" method="POST">
+                                <button class="waves-effect waves-light red darken-3 btn-large" type="submit">Delete Entry</button>
+                            </form>
                         </div>
-                        <div class="row">
-                            <div class="input-field col s6">
-                                <input id="type" type="text" name="type" value="<%= wine.type %>">
-                                <label for="type">Type of Wine:</label>
-                            </div>
-                            <div class="input-field col s6">
-                                <input id="brand" type="text" name="brand" value="<%= wine.brand %>">
-                                <label for="brand">Brand/Vineyard:</label>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="input-field col s6">
-                                <input id="origin" type="text" name="origin" value="<%= wine.origin %>">
-                                <label for="origin">Country/Region:</label>
-                            </div>
-                            <div class="input-field col s6">
-                                <input id="year" type="number" name="year" value="<%= wine.year %>">
-                                <label for="year">Year:</label>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="input-field col s2">
-                                <input id="price" type="text" name="price" value="<%= wine.price %>">
-                                <label for="price">Price:</label>
-                            </div>
-                            <div class="input-field col s7">
-                                <input id="boughtAt" type="text" name="boughtAt" value="<%= wine.boughtAt %>">
-                                <label for="boughtAt">Where you got it:</label>
-                            </div>
-                        </div>
-                    </fieldset>
-                    <fieldset class="wine-notes">
-                        <legend>Tasting Notes</legend>
-                        <div class="row">
-                            <div class="input-field col s3">
-                                <input id="color" type="text" name="color" value="<%= wine.color %>">
-                                <label for="color">Color:</label>
-                            </div>
-                            <div class="input-field col s3">
-                                <input id="flavor" type="text" name="flavor" value="<%= wine.flavor %>">
-                                <label for="flavor">Flavor:</label>
-                            </div>
-                            <div class="input-field col s3">
-                                <input id="aroma" type="text" name="aroma" value="<%= wine.aroma %>">
-                                <label for="aroma">Aroma:</label>
-                            </div>
-                            <div class="input-field col s3">
-                                <input id="finish" type="text" name="finish" value="<%= wine.finish %>">
-                                <label for="finish">Finish:</label>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="input-field col s6">
-                                <label for="buyAgain">
-                                    <input type="checkbox" class="filled-in red" for="buyAgain" id="buyAgain"
-                                    <% if (wine.buyAgain === true) { %>
-                                        checked= "checked"
-                                    <%}%>
-                                    />
-                                    <span>I would buy it again</span>
-                                </label>
-                            </div>
-                            <div class="input-field col s6">
-                                <input id="numberBought" type="number" name="numberBought" value="<%= wine.numberBought %>" min=0>
-                                <label for="numberBought"># Bought/Tried:</label>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="input-field col s6">
-                                <input id="rating" type="number" name="rating" value="<%= wine.rating %>" min=0 max=5>
-                                <label for="rating">Overall Rating: </label>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <textarea id="tasting-comments" class="materialize-textarea" name="comments" data-length="250"><%= wine.comments %></textarea>
-                                <label for="tasting-comments">Tasting Notes/Comments:</label>
-                            </div>
-                        </div>
-                    </fieldset>
-                    <div class="form-footer">
-                        <input class="waves-effect waves-light red darken-3 btn-large form-submit" type="submit" value="Save Changes">
-                </form>
-                        <form action="/wines/<%= wine._id %>?_method=DELETE" method="POST">
-                            <button class="waves-effect waves-light red darken-3 btn-large" type="submit">Delete Entry</button>
-                        </form>
-                    </div>
 
-            </div>
-            <div class="row">
-                <a class="waves-effect waves-light grey btn-flat btn-large form-back-link" href="/wines">Back to All Wines</a>
+                </div>
+                <div class="row">
+                    <a class="waves-effect waves-light grey btn-flat btn-large form-back-link" href="/wines">Back to All Wines</a>
+                </div>
             </div>
         </div>
     <% include ../partials/scripts.ejs %>

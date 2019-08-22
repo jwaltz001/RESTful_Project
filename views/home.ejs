@@ -8,25 +8,25 @@
             <% include ./partials/header.ejs %>
         </header>
         <div id="home-background" class="background-img">
-        </div>
-        <div class="container">
-            <% if (user){ %>
-            <div class="row">
-                <h2>Welcome, <%= user.name %></h2>
-                <div class="col s12 ">
-                    <a href="/wines" class="waves-effect waves-light red darken-3 btn hoverable">Open My Wine Journal</a>
-                </div>
-            </div>
-            <% }else{ %>
+            <div class="container">
+                <% if (user){ %>
                 <div class="row">
-                    <div class="col s12 m6 sign-in-options">
-                        <a class="waves-effect waves-light red darken-3 btn modal-trigger" href="#login-modal">Log in</a>
-                    </div>
-                    <div class="col s12 m6 sign-in-options">
-                        <a class="waves-effect waves-light red darken-3 btn modal-trigger" href="#signup-modal">Sign Up</a>
+                    <h2>Welcome, <%= user.name %></h2>
+                    <div class="col s12 ">
+                        <a href="/wines" class="waves-effect waves-light red darken-3 btn hoverable">Open My Wine Journal</a>
                     </div>
                 </div>
-            <% } %>
+                <% }else{ %>
+                    <div class="row">
+                        <div class="col s12 m6 sign-in-options">
+                            <a class="waves-effect waves-light red darken-3 btn modal-trigger" href="#login-modal">Log in</a>
+                        </div>
+                        <div class="col s12 m6 sign-in-options">
+                            <a class="waves-effect waves-light red darken-3 btn modal-trigger" href="#signup-modal">Sign Up</a>
+                        </div>
+                    </div>
+                <% } %>    
+            </div>
         </div>
     <% include ./partials/session_modals%>
     <% include ./partials/scripts.ejs %>
